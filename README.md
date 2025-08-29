@@ -30,37 +30,37 @@ Supabase free tier databases automatically pause after a period of inactivity to
 ## Installation
 
 1. **Install Python dependencies:**
-   \`\`\`bash
+   ```bash
    pip3 install supabase
-   \`\`\`
+   ```
 
 2. **Create the keepalive table in your Supabase database:**
    - Run the SQL script `create_keepalive_table.sql` in your Supabase SQL editor
    - Or execute it using the v0 script runner
 
 3. **Test the connection:**
-   \`\`\`bash
+   ```bash
    python3 test_supabase_connection.py
-   \`\`\`
+   ```
 
 ## Usage
 
 ### Manual Execution
-\`\`\`bash
+```bash
 python3 supabase_keepalive.py
-\`\`\`
+```
 
 The script will run continuously, pinging the database every 2 hours.
 
 ### As a Linux Service (Recommended)
 
 1. **Create a systemd service file:**
-   \`\`\`bash
+   ```bash
    sudo nano /etc/systemd/system/supabase-keepalive.service
-   \`\`\`
+   ```
 
 2. **Add the following content:**
-   \`\`\`ini
+   ```ini
    [Unit]
    Description=Supabase Keepalive Service
    After=network.target
@@ -75,23 +75,23 @@ The script will run continuously, pinging the database every 2 hours.
 
    [Install]
    WantedBy=multi-user.target
-   \`\`\`
+   ```
 
 3. **Enable and start the service:**
-   \`\`\`bash
+   ```bash
    sudo systemctl enable supabase-keepalive.service
    sudo systemctl start supabase-keepalive.service
    sudo systemctl status supabase-keepalive.service
-   \`\`\`
+   ```
 
 ## Configuration
 
 The script needs to be configured with your Supabase credentials. Edit the script file and replace the placeholder values:
 
-\`\`\`python
+```python
 SUPABASE_URL = "your_supabase_url"
 SUPABASE_SERVICE_ROLE_KEY = "your_supabase_service_role"
-\`\`\`
+```
 
 Get these values from your Supabase dashboard:
 - **SUPABASE_URL**: Settings → API → Project URL
@@ -133,10 +133,10 @@ The script provides comprehensive logging:
 
 ⚠️ **Important:** To avoid credential leaks, always use placeholder values when sharing code:
 
-\`\`\`python
+```python
 SUPABASE_URL = "your_supabase_url"
 SUPABASE_SERVICE_ROLE_KEY = "your_supabase_service_role"
-\`\`\`
+```
 
 This script uses the service role key which has elevated permissions. Ensure:
 - The script file has appropriate permissions (readable only by the service user)
