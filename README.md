@@ -148,7 +148,7 @@ This script uses the service role key which has elevated permissions. Ensure:
 
 If this script helped you keep your Supabase database active, consider supporting the development:
 
-☕ **[Buy me a coffee](https://buymeacoffee.com/ooovenenoso)**
+☕ **[Buy me a coffee](https://buymeacoffee.com/oooindefatigable)**
 
 ## License
 
